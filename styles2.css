@@ -59,18 +59,19 @@ width: 100%;
 
 /*#home */
 #home{
-  width: 100%;
-  height: 80vh;
+  /* width: 100%;
+  height: 80vh; */
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
+  /* border: 1px solid red; */
 }
-#home p{
+#home .words {
   font-size: 55px;
   color: #fff;
-  margin-left: 10%;
-  margin-top: 19%;
-  width: 100%;
+  margin-left: 30px;
+  margin-top: 19px;
+  width: 50%;
   height: 70%;
   /* border: 1px solid red; */
 }
@@ -79,36 +80,72 @@ width: 100%;
   font-weight: 900;
   color: #ff004f;
 }
-#home .photo img{
-  width: 90%;
-  height: 90%;
-  border-radius: 5%;
+.photo{
+  /* margin-left: -5px; */
+  width: 80%;
+  height: 50vh;
+  border-radius: 10%;
   /* float: right; */
-  margin: 5%;
-  margin-right: 20% ;
-  background-color: plum;
-  border: 1px solid red;
+  /* margin: 5%; */
+  /* margin-right: 20% ; */
+  /* background-color: plum; */
+  /* border: 1px solid red; */
+background-image:url(images/selfie.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
+.photocover{
+  width: 50%;
+  
+  height: max-content;
+  padding: 30px;
+  /* border: 3px solid rgb(35, 2, 220); */
+}
+
+
+
 
 /* ------ about me ------ */
 #main{
   color: #fff;
-  /* width: 100%; */
+  width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   padding: 40px 0;
   /* display: none; */
 }
-#main .photo2 img{
+/* #main .photo2 img{
   flex-basis: 80%;
   height: 100%;
   border-radius: 4%;
   /* float: left; */
-  margin-top: 20px;
+  /* margin-top: 20px;
   border: 1px solid red;
-}
+} */ 
+.photocover2{
+    width: 40%;
+    height: max-content;
+    padding: 10px;
+    padding-left: 50px;
+    
+    /* margin-left: 0px; */
+    /* border: 3px solid rgb(35, 2, 220); */
+  }
+  .photo2{
+    border-radius: 5%;
+    width: 90%;
+    height: 70vh;
+    /* margin-left: 0px;
+    margin-right: 0px; */
+    /* border: 1px solid red; */
+     background-image:url(images/profile1.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+background-position: center;
+  }
 #main .content{
   flex-basis: 50%;
   font-size: 16px;
@@ -361,8 +398,18 @@ nav .fa-solid{
 hr{
   margin: 0 10%;
 }
-@media only screen and (max-width:600px){
-  nav{
+@media (max-width:990px){
+  #home p{
+    font-size: 40px;
+  }
+  #home{
+    display: flex;
+  }
+  #home .photo img{
+    width: 40%;
+  }
+}
+nav{
     width: 100%;
     margin: 0;
     line-height: 40px;
@@ -404,35 +451,82 @@ hr{
   nav .logo{
     width: 45%;
   }
+
+@media only screen and (max-width:600px){
+  
   #home{
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
   }
-  #home p{
+  /* #home p{
     font-size: 30px;
     flex-basis: 45%;
     margin-left: 40px;
     margin-top: 15px;
     margin-bottom: 0;
+  } */
+   #home .words {
+  /* font-size: 55px; */
+  /* color: #fff; */
+  margin-left: 50px;
+  /* margin-top: 1px; */
+  width: 100%;
+  /* height: 70%; */
+  /* border: 1px solid red; */
+}
+  .photo{
+  /* margin-left: -5px; */
+  width: 100%;
+  height: 70vh;
+  border-radius: 50%;
+  /* float: right; */
+  /* margin: 5%; */
+  /* margin-right: 20% ; */
+  /* background-color: plum; */
+  /* border: 1px solid red; */
+background-image:url(images/profile1.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+  .photocover{
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    /* margin-left: 0px; */
+    /* border: 3px solid rgb(35, 2, 220); */
   }
-  #home .photo img{
+  /* #home .photo img{
     width: 45%;
     height: 100%;
     float: right;
     margin-right: 5px;
     margin-top: 0;
     margin-bottom: 20px;
-  }
+  } */
+
+  /* <---------about--------> */
   .sub-title{
     font-size: 35px;
   }
   .photo2,.content{
     flex-basis: 100%;
   }
-  .photo2 img{
+  .photo2 {
+    display: none;
     flex-basis: 100%;
     height: 80%;
   }
+  .photocover2{
+    width: 100%;
+    display: none;
+    height: max-content;
+    padding: 10px;
+    /* margin-left: 0px; */
+    border: 1px solid rgb(35, 2, 220);
+  }
+  
   .content{
     margin-left:30px;
     margin-bottom: 30px;

@@ -226,30 +226,50 @@
   </script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzjoDY2PjfKwGsbmSoreNDH5oYoKQQ21PbpD5XNtoouJox-IiRRTQ1mAk4PI_3traAp/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyuBov4d0gxLIcWBxPDiGikq4Nehu2iypcrA68pnjRF6n7OTkPCy11xGNTBTMOcIN1I/exec';
   const form = document.forms['submit-to-google-sheet'];
   const msg = document.getElementById('msg');
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-        if (response.ok) {
-          msg.innerText = "Message Sent Successfully";
-          setTimeout(() => {
-            msg.innerText = '';
-          }, 5000);
-          form.reset();
-        } else {
-          throw new Error('Network response was not ok.');
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        msg.innerText = "There was an error sending your message.";
-      });
+
+    // Gather feedback data from the form using form.elements
+    const feedback = {
+      name: form.elements['name'].value,
+      email: form.elements['email'].value,
+      message: form.elements['message'].value,
+    };
+
+    // Call the submitFeedback function
+    const responseMessage = await submitFeedback(feedback);
+    msg.innerText = responseMessage;
+    form.reset();
   });
+
+  const submitFeedback = async (feedback) => {
+    try {
+      const response = await fetch(scriptURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(feedback), // Send feedback as JSON
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        return 'Message sent successfully!'; // Success message
+      } else {
+        throw new Error(data.message || 'Error submitting feedback');
+      }
+    } catch (error) {
+      console.error('Error!', error.message);
+      return 'There was an error sending your message.';
+    }
+  };
 </script>
+
+
 
 </body>
 </html>

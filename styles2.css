@@ -363,6 +363,10 @@ form .btn2{
   margin-top: 20px;
   cursor: pointer;
 }
+form .btn2:hover{
+  background: #000;
+  color: #fff;
+}
 .copyright{
   width: 100%;
   text-align: center;

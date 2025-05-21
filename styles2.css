@@ -9,6 +9,8 @@ html{
 body{
   background-color: #000;
   margin: 0;
+  width: 100%;
+  
 }
 nav{
   width: 100%;
@@ -227,7 +229,7 @@ transform: translateY(-15px);
 }
 .work-list{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 40px;
   margin-top: 40px;
 }
@@ -420,9 +422,7 @@ hr{
     padding: 5px;
   }
   .photo2{
-    
-    height: 70vh;
-    
+    height: 70vh; 
   }
 }
 
@@ -468,25 +468,29 @@ hr{
   }
   nav .logo{
     width: 70%;
-    text-align: center;
+    /* text-align: center; */
     text-transform: uppercase;
   }
  
 
   #home{
+    width: 100%;
     height: 100%;
-    display: flex;
+    /* display: flex; */
     flex-wrap: wrap;
+    /* border: 1px solid rgb(35, 2, 220); */
   }
   
    #home .words {
-  margin-left: 50px;
+  margin-left: 40px;
   width: 100%;
+  /* border: 1px solid rgb(35, 2, 220); */
 }
 
   .photo{
-  width: 100%;
-  height: 70vh;
+  width: 250px;
+  padding: 0px;
+  height: 60vh;
   border-radius: 50%;
   background-image:url(images/profile1.jpg);
   background-size: cover;
@@ -494,10 +498,8 @@ hr{
   background-position: center;
 }
   .photocover{
-    width: 100%;
-    margin-top: 0px;
-    margin-left: 80px;
-    /* border: 1px solid rgb(35, 2, 220); */
+    padding: 0;
+  margin: 40px;
   }
   
 
@@ -508,31 +510,58 @@ hr{
   .photo2,.content{
     flex-basis: 100%;
   }
+
+  .content{
+    width: 100%;
+  }
   .photo2 {
     display: none;
-    flex-basis: 100%;
-    height: 80%;
   }
   .photocover2{
-    width: 100%;
     display: none;
-    height: max-content;
-    padding: 10px;
-    border: 1px solid rgb(35, 2, 220);
   }
   
   .content{
-    margin-left:30px;
-    margin-bottom: 30px;
+    width: 100%;
+    margin: 0px;
+    padding-left: 1px;
   }
   #main{
     /* border: 1px solid red; */
     height: 100%;
+    padding: 10px;
+    overflow: hidden;
+    
   }
-  #services{
+  #main .abt{
+    text-align: center;
+  }
+
+  .tab-link{
+  margin-right: 30px;
+  
+ 
+}
+  
+  #portfolio{
+  margin: 30px;
+  padding: 20px 0;
+}
+
+.work-list{
+  height: 200vh;
+  }
+
+ #services{
     margin-top: 10px;
     /* border: 1px solid red; */
   }
+
+  #services{
+  padding: 20px 0;
+  margin: 30px;
+}
+
   .row{
     display: block;
   }

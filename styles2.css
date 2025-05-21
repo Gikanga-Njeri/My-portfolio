@@ -534,7 +534,7 @@ hr{
     
   }
   #main .abt{
-    text-align: center;
+    /* text-align: center; */
   }
 
   .tab-link{
@@ -549,7 +549,7 @@ hr{
 }
 
 .work-list{
-  height: 200vh;
+  height: 150vh;
   }
 
  #services{

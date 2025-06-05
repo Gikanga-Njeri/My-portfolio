@@ -364,15 +364,20 @@ form .btn2{
   cursor: pointer;
 }
 form .btn2:hover{
+  border: 1px solid white;
+  border-radius: 20px;
   background: #000;
   color: #fff;
 }
-
-.swal2-popup {
-  width: 400px !important;  /* Adjust width */
-  height: 400px !important; /* Adjust height */
-  font-size: 1rem !important; /* Optional: Adjust font size */
+#msg {
+  transition: opacity 0.5s ease;
 }
+
+/* .swal2-popup {
+  width: 400px !important;  
+  height: 500px !important; 
+  font-size: 1rem !important; 
+} */
 
 .copyright{
   width: 100%;

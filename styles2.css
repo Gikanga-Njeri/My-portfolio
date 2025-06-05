@@ -367,6 +367,13 @@ form .btn2:hover{
   background: #000;
   color: #fff;
 }
+
+.swal2-popup {
+  width: 400px !important;  /* Adjust width */
+  height: 400px !important; /* Adjust height */
+  font-size: 1rem !important; /* Optional: Adjust font size */
+}
+
 .copyright{
   width: 100%;
   text-align: center;

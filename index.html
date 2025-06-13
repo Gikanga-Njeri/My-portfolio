@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="styles2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
 </head>
 <body>
   <nav>
@@ -36,10 +37,11 @@
   
     <div id="home">
     <div class="words">
-      <P>UI/UX DESIGNER <BR>
-        I'm <span>Trizah Gikanga</span> <br>
-        A Web Designer <br> from Kenya
-      </P>
+       <p>
+    UI/UX DESIGNER <br>
+    I'm <span id="name">Trizah Gikanga</span> <br>
+    A <span id="changing-role">Web Designer</span> <br> from Kenya
+  </p>
       
     </div> 
   
@@ -207,81 +209,19 @@
     </div>
   </div>
   <div class="copyright">
+
+    <div class="quick-links">
+    <a href="#home">Home</a>
+    <a href="#main">About</a>
+    <a href="#services">Projects</a>
+    <a href="#portfolio">Portfolio</a>
+  </div>
+
     <p>copyright &copy; All Rights Reserved Teresia Gikanga. 2024<br> Made with <i class="fa-solid fa-heart-circle-check"></i> </p>
   </div>
 </div>
 
-<!-- about tabs -->
-  <script>
-    var tabLinks = document.getElementsByClassName('tab-link');
-    var tabContents = document.getElementsByClassName('tab-content');
-
-    function opentab(tabname){
-      for (tabLink of tabLinks) {
-        tabLink.classList.remove("active");
-      }
-      for (tabContent of tabContents) {
-        tabContent.classList.remove("active");
-      }
-      event.currentTarget.classList.add("active");
-      document.getElementById(tabname).classList.add("active");
-    }
-  </script>
-  <!-- side bar -->
-  <script>
-    var menu = document.getElementById('sidemenu');
-
-    function openMenu(){
-      menu.style.right = '0';
-    }
-    function closeMenu(){
-      menu.style.right = '-200px';
-    }
-  </script>
-<!-- contact form -->
-<script>
-  const scriptURL =                       
-      "https://script.google.com/macros/s/AKfycbwPwIOKeVqwtogSKms3zZPBmbIMwK5Eg-6TZiO9ZOTb5Ew3LkSlNsFlRfBgBdkv6HCZ/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      var msg = document.getElementById("msg");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        var formData = new FormData(form);
-        var name = document.getElementById("Name");
-        var email = document.getElementById("Email");
-        var message = document.getElementById("Message");
-        
-        
-
-        fetch(scriptURL, { method: "POST", body: formData })
-          .then((response) => {
-            // swal("Done", "Submitted Successfully.", "success");
-            
-            msg.innerHTML = "Thank you for your message <br> We will get back to you soon.";
-
-            // Clear message after 3 seconds
-            setTimeout(() => {
-              msg.innerHTML = "";
-            }, 5000);
-
-            form.reset();
-            
-          })
-          .catch((error) => {
-            // swal("Error", "Something went wrong. please try again!", "error");
-            msg.innerHTML = "Error submitting message. <br> Please try again later.";
-
-            setTimeout(() => {
-              msg.innerHTML = "";
-            }, 4000);
-      
-      
-            form.reset();
-          });
-
-      });
-</script>
+<script src="script2.js"></script>
 
 
 
